@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Anemia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #ff0000;
+        }
+
+        .check-button {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .about-text h2 {
+            color: #ff0000;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .about-text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-text p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .card h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #777;
+            margin: 0;
+        }
+
+        .card-icon {
+            font-size: 30px;
+            color: #ff0000;
+            margin-bottom: 10px;
+        }
+        .hemoglobin, .mchc{
+            position: relative;
+            top: 20px;
+        }
+        .mcv, .mch{
+            position: relative;
+            top: -20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#" class="navbar-brand">Anemia</a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}" style="color: #ff0000;">About</a></li>
+            <li><a href="{{ url_for('predict') }}">Predict</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+        <a href="{{ url_for('predict') }}"><button class="check-button">check</button></a>
+    </div>
+
+    <div class="container">
+        <div class="about-section">
+            <div class="about-text">
+                <h2>About</h2>
+                <p>Anemia: low red blood cells or hemoglobin, causing oxygen shortage. Symptoms: fatigue, weakness, shortness of breath, pale skin. Causes: nutritional deficiencies, diseases, blood loss. Treatments may vary.</p>
+            </div>
+            <div class="info-cards">
+                <div class="card hemoglobin">
+                    <span class="card-icon">🫀</span>
+                    <h3>Hemoglobin</h3>
+                    <p>Hemoglobin, a protein in red blood cells, transports oxygen and carbon dioxide. Healthy ranges: Men: 13.2-16.6 g/dL, Women: 11.6-15 g/dL.</p>
+                </div>
+                <div class="card mch">
+                    <span class="card-icon">🔬</span>
+                    <h3>MCH</h3>
+                    <p>An MCH value refers to the average quantity of hemoglobin present in a single red blood cell. The normal range for MCH is between 27.5 and 33.2 picograms (pg).</p>
+                </div>
+                <div class="card mchc">
+                    <span class="card-icon">🧬</span>
+                    <h3>MCHC</h3>
+                    <p>The mean corpuscular hemoglobin concentration is average concentration of hemoglobin in red blood cells. The normal range: 33.4-35.5g/dL.</p>
+                </div>
+                <div class="card mcv">
+                    <span class="card-icon">📈</span>
+                    <h3>MCV</h3>
+                    <p>MCV stands for mean corpuscular volume. An MCV blood test measures the average size of red blood cells. The normal range for MCV is between 80 to 100 femtoliter.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

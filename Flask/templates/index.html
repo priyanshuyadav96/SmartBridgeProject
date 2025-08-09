@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anemia Predictor</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            color: white;
+            /* background-image: url('../src/anemiapic.jpg'); */
+            background-size: cover;
+        }
+
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* background-color: #ff0000; */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{{ url_for('static', filename='anemiapic.jpg') }}") no-repeat center center/cover;        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            box-sizing: border-box;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .check-button {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .hero-content {
+            margin-top: 100px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            max-width: 700px;
+            margin-left: -30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#" class="navbar-brand">Anemia</a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}" style="color: #ff0000;">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('predict') }}">Predict</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+        <a href="{{ url_for('predict') }}"><button class="check-button">check</button></a>
+    </div>
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Anemia Predictor: Your Health Guardian</h1>
+            <p>Empowering you with early detection for better management and healthier living.</p>
+        </div>
+    </div>
+
+</body>
+</html>
